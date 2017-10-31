@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Wallpaper maker from LinguaLeo words",
+  "version": "0.1.0",
+  "description": "Make wallpapers from your LinguaLeo.com dictonary words.",
+
+  "content_scripts": [{
+		"css": ["styles.css"],
+		"js": ["vendor/jquery-3.2.1.min.js", "vendor/masonry.pkgd.min.js", "vendor/download2.js", "content.js"],
+		"matches": ["https://lingualeo.com/*"],
+		"run_at": "document_end"
+	}],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_title": "LinguaLeo wallpaper maker"
+	},
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"https://lingualeo.com/*",
+		"<all_urls>"
+	]
+
+}
